@@ -41,7 +41,10 @@ $(".btn").on("click", function (event) {
         sequence = [];
         answers = [];
         level = 0;
-        $("#level-title").text("Game Over");
+        $("#level-title").text("Game Over, Press Any Key to Restart");
+        $(document).one("keydown", function () {
+            playNewSound();
+        });
     } else if (answers.length === sequence.length) {
         // Player's sequence matches the generated sequence
         if (answers.length === level) {
